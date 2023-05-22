@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0-SeImrYXukvmkD5w7kvNqOsobhV4dv3N4g&usqp=CAU" type="image">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<style>
+    body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffff;
+    }
+    .main{
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .google{
+        position: relative;
+        width: 380px;
+        top: 80px;
+    }
+    .searchb{
+        width: 500px;
+        height: 45px;
+        position: absolute;
+        transform: translate(-20%,50%);
+        top: 240px;
+    }
+    #search:hover{
+        background-color:#e7e0e0;
+    }
+    input[type="text"]{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #d5d4d4;
+        left: 0;
+        border-radius: 50px;
+        padding: 0 40px 0 45px;
+        outline: none;
+        box-shadow: 0 2px 10px -7px #000;
+        font-size: 16px;
+        font-family: noto sans hk;
+    }
+    .searchicon{
+        position: absolute;
+        z-index: 1;
+        font-size: 21px;
+        top: 13px;
+        left: 18px;
+        color: #777;    
+        cursor: default;
+    }
+    .mic{
+        position: absolute;
+        width: 24px;
+        right: -30px;
+        top: 11px;
+        cursor: pointer;
+    }
+    nav{
+        float: right;
+        font-family: arial;
+        font-size: 14px;
+    }
+    .pic{
+        width: 35px;
+        border-radius: 50%;
+        border: 1px solid white;
+        transition: all 299ms;
+        margin: 10px 20px 0 0;
+    }
+    .pic:hover{
+        background: #000;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .navtext{
+        color: #444;
+        text-decoration: none;
+        top: -12px;
+        position: relative;
+        margin: 5px;
+        cursor: pointer;   
+    }
+    .gmailText::before{
+        content: " ";
+        height: 1px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0px;
+        background-color: black;
+        position: absolute;
+        bottom: -5px;
+        transition: all 250ms;
+    }
+    .gmailText:hover::before{
+        width: 30px;
+    }
+    .apps{
+        position: relative;
+        margin: 10px;
+        top: -6px;
+        color: #555;
+        cursor: pointer;
+        border: none;
+        border-radius: 50px;
+        padding: 6px;
+    }
+    .apps:hover{
+        background-color:#ebe8e8;
+        border-radius: 40px;
+        padding: 6px;
+    }
+    .cam{
+        position: absolute;
+        width: 32px;
+        right: -70px;
+        top: 6px;
+        cursor: pointer;
+    }
+    #a{
+        position: relative;
+        top: 70px;
+        left: 27%;
+        background: #ebe8e8;
+        border: none;
+        padding: 8px 20px;
+        margin: 10px;
+        color: #4e4d4d;
+        border-radius: 5px;
+        outline: none;
+    }
+    #a:hover{
+        background: #cdc8c8;
+        color: #000;
+        box-shadow: 0 0 2px #000;
+        cursor: pointer;
+    }
+    #b{
+        position: relative;
+        top: 70px;
+        left: 27%;
+        background: #ebe8e8;
+        border: none;
+        padding: 8px 20px;
+        margin: 10px;
+        color: #4e4d4d;
+        border-radius: 5px;
+        outline: none;
+    }
+    #b:hover{
+        background: #cdc8c8;
+        color: #000;
+        box-shadow: 0 0 2px #000;
+        cursor: pointer;
+    }
+    .grid{
+        background-color: cornflowerblue;
+        border: 2px solid black;
+        width: 20rem;
+        height: 25rem;
+        border-radius: 1rem;
+        position: relative;
+        top: 10%;
+        left: 78%;
+        right: 4rem;
+        top: 4rem;
+        transition: all 250ms;
+        opacity: 0;
+    }
+    #googleApps{
+        color: white;
+        background-color: #777;
+        position: absolute;
+        width: 5rem;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 1.5rem;
+        transition: all 250ms;
+        transition-delay: 1s;
+        font-size: 1rem;
+        top: 3.5rem;
+        opacity: 0;
+        border-radius: 5px;
+        font-family: arial;
+        font-size: small;
+    }
+    #voiceSearch{
+        color: white;
+        background-color: #777;
+        position: absolute;
+        width: 6rem;
+        padding: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 31.5%;
+        top: 28rem;
+        transition: all 250ms;
+        transition-delay: 1s;
+        font-size:13px;
+        opacity: 0;
+        border-radius: 5px;
+        font-family: arial;
+    }
+    #acc{
+        font-family: arial;
+        font-size: medium;
+        background-color: #777;
+        width: 12rem;
+    }
+    .foot{
+        top: 288px;
+        position: relative;
+        color: #000;
+        background-color:#e6e4e4;
+    }
+</style>
+<body>
+    <nav>
+        <a href="https://gmail.com" target="_blank" class="navtext gmailText" >Gmail</a>
+        <a href="https://www.google.co.in/imghp?hl=en&authuser=0&ogbl" class="navtext gmailText" target="_blank">Images</a>
+        <span class="material-icons apps" id="gmail_button">apps</span>
+        <img src="girl.jpg" alt="" width="30px" class="pic">
+    </nav>
+    <div class="main">
+        <img src="goog.jpg" alt="image" class="google" width="300px">
+        <div class="searchb">
+        <span class="material-icons searchicon">search</span>
+        <form action="https://www.google.com/search">
+        <input type="text" placeholder="Search Google or type URL" name="q" id="search">
+        <button type="submit" id="a">Google Search</button>
+        <button type="submit" id="b">I'm Feeling Lucky</button>
+        </form>
+        <img src="https://i.pinimg.com/originals/ea/5f/5b/ea5f5bd3b4110f2afb958049b4096d3a.png" id="mic" alt="" class="mic">
+        <img src="https://play-lh.googleusercontent.com/G5oF0mhpOcQzFTrU6TDUL0JoAjzRt38weiZKua7L61WVT1z3dPcE9gUu-W2EwtM9cZU" alt="" class="cam">
+        </div>
+    </div>
+    <div class="grid" id="grid">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam officiis eum modi ab ipsum labore magni, aliquam perspiciatis, dolorum, ipsam sed accusantium!
+    </div>
+    <div id="googleApps">
+        Google apps
+    </div>
+    <div id="voiceSearch">
+        Search By Voice
+    </div>
+    <div class="foot">
+        <pre style="font-family: arial; padding-top: 15px;padding-left: 25px; font-size: 14px;">India</pre><hr>
+       <pre style="font-family: arial; font-size: 14px;padding-left: 25px;padding-top: 0px; display: inline-block; margin-top: 4px;"> About     Adverstising     Business      How search works </pre>
+       <pre style="display: inline-block; font-size: 14px; font-family: arial;text-align: right;margin-top: 4px;">                                                                                                                                                                                                                                              Privacy    Terms    Settings</pre>
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+<script>
+    const google_ind = document.getElementById("googleApps");
+    const dropdown_button = document.getElementById("gmail_button")
+    const dropdown = document.getElementById("grid")
+    const voiceSearch = document.getElementById("voiceSearch");
+    const micButton = document.getElementById("mic");
+    dropdown_button.onmouseover = e => {
+        google_ind.style.transitionDelay = "0.05s"
+        google_ind.style.opacity = 1
+    }
+    dropdown_button.onmouseleave = e => {
+        google_ind.style.transitionDelay = "0.25s"
+        google_ind.style.opacity = 0;
+    }
+    micButton.onmouseover = e => {
+        voiceSearch.style.transitionDelay = "0.05s"
+        voiceSearch.style.opacity = 1
+    }
+    micButton.onmouseleave = e => {
+        voiceSearch.style.transitionDelay = "0.15s"
+    voiceSearch.style.opacity = 0;
+    }
+    dropdown_button.onclick = e => {
+        if(dropdown.style.opacity == 0){
+            dropdown.style.opacity = 1
+        }
+        else{
+            dropdown.style.opacity = 0;
+        }
+    }
+    const input = document.getElementById("search")
+    input.focus()
+</script>
+</html>
